@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 
 theseusX = 20
 theseusY = 7
@@ -38,6 +39,7 @@ def map_list(myMap,theseusX, theseusY, theseusXprev, theseusYprev):
     myMap[(minotaurX)+((minotaurY)*41)] = '$'
     return ''.join(myMap)
 
+os.system("clear")
 level = open('level3.map', 'r')
 myMap = make_list(level)
 myString = map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev)
@@ -55,7 +57,7 @@ while(1):
         theseusY -= 1
     if direction == 's':
         theseusY += 1
-
-    #myMap = make_list(level)
+    
+    os.system("clear")
     myString = map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev)
     displayMap(myString)
