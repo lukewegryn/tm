@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def minotaurNextLocation(map,theseusX, theseusY, minotaurX, minotaurY):
     if minotaurX < theseusX and map[minotaurX + 1, minotaurY] != '0':
         minotaurX += 1
