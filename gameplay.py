@@ -10,6 +10,7 @@ theseusYprev = theseusY
 needUpdate = 1
 
 os.system("clear")
+
 level = open('level3.map', 'r')
 myMap = M.make_list(level)
 myString =M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev)
