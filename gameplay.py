@@ -30,13 +30,15 @@ def map_list(myMap,theseusX, theseusY, theseusXprev, theseusYprev):
         theseusX = theseusXprev
         theseusY = theseusYprev
     myMap[(theseusX)+((theseusY)*41)] =  '?'
+    if theseusX !=theseusXprev or theseusY != theseusYprev:
+        myMap[(theseusXprev)+((theseusYprev)*41)] = ' '
     #else:
      #   myMap[(theseusX)+((theseusY)*41)] == '?'
       #  myMap[(theseusXprev)+((theseusYprev)*41)] == ' '
     myMap[(minotaurX)+((minotaurY)*41)] = '$'
     return ''.join(myMap)
 
-level = open('level2.map', 'r')
+level = open('level3.map', 'r')
 myMap = make_list(level)
 myString = map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev)
 displayMap(myMap)
