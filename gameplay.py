@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
 import sys
 import movement as M
-from movement import theseusX, theseusY
-from movement import minotaurX, minotaurY
+#from movement import theseusX, theseusY
+#from movement import minotaurX, minotaurY
 import os
-import curses
-import getCharacter as GC 
+import minotaur as mino
+theseusX = 20
+theseusY = 7
+minotaurX = 1
+minotaurY = 1
 
+minotaurXprev = minotaurX
+minotaurYprev = minotaurY
 theseusXprev = theseusX
 theseusYprev = theseusY
 needUpdate = 1
 
 level = open('level3.map', 'r')
 myMap = M.make_list(level)
-myString =M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev)
+myString =M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev, minotaurX, minotaurY)
 M.displayMap(myMap)
 stdscr = curses.initscr()
 while(1):
@@ -54,3 +59,15 @@ while(1):
         #os.system("clear")
         myString = M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev)
         M.displayMap(myString)
+
+
+    minotaurPrevX = minotaurX
+    minotaurPrevY = minotaurY
+    minotaurX, minotaurY = mino.minotaurNextLocation(myMap, theseusX, theseusY,minotaurX, minotaurY)
+    #mino.minotaurRemoveLast(myMap, theseusX, theseusY, minotaurX, minotaurY, dirChange)
+    minotaurX, minotaurY = mino.minotaurNextLocation(myMap, theseusX, theseusY, minotaurX, minotaurY)
+    #mino.minotaurRemoveLast(myMap, dirChange)
+    os.system("clear")
+    myString = M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev, minotaurX, minotaurY)
+    M.displayMap(myString)
+
