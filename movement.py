@@ -20,11 +20,20 @@ def make_list(stream):
     myMap.append('\n')
     return myMap
 
+def wall_check(myMap, theseusX, theseusY):
+    if myMap[(theseusX)+((theseusY)*41)] == '0':
+        return 0
+    else :
+        return 1
+
 def map_list(myMap,theseusX, theseusY, theseusXprev, theseusYprev):
     if myMap[(theseusX)+((theseusY)*41)] == '0':
+        print(theseusX)
         theseusX = theseusXprev
         theseusY = theseusYprev
-    myMap[(theseusX)+((theseusY)*41)] =  '?'
+        print(theseusX)
+    else :
+        myMap[(theseusX)+((theseusY)*41)] =  '?'
     if theseusX !=theseusXprev or theseusY != theseusYprev:
         myMap[(theseusXprev)+((theseusYprev)*41)] = ' '
     #else:
@@ -32,5 +41,3 @@ def map_list(myMap,theseusX, theseusY, theseusXprev, theseusYprev):
       #  myMap[(theseusXprev)+((theseusYprev)*41)] == ' '
     myMap[(minotaurX)+((minotaurY)*41)] = '$'
     return ''.join(myMap)
-
-
