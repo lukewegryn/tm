@@ -14,13 +14,3 @@ def minotaurNextLocation(map,theseusX, theseusY, minotaurX, minotaurY):
         minotaurY -= 1
 
     return minotaurX, minotaurY
-
-def minotaurRemoveLast(myMap, dirChange):
-    if dirChange == 1:
-        myMap[(minotaurX-1)+minotaurY*41] = ' '
-    elif dirChange == 2:
-        myMap[(minotaurX+1)+minotaurY*41] = ' '
-    elif dirChange == 3:
-        myMap[minotaurX + (minotaurY-1)*41] = ' '
-    elif dirChange == 4:
-        myMap[minotaurX + (minotaurY+1)*41] = ' '
