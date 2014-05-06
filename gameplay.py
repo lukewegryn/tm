@@ -16,6 +16,7 @@ while(1):
     direction =input("theseusX: ")
     theseusXprev = theseusX
     theseusYprev = theseusY
+    print(theseusX)
     if direction == 'd':
         theseusX += 1
     if direction == 'a':
