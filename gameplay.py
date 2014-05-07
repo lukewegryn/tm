@@ -23,19 +23,19 @@ option = 0
 while gameOver == 0:
     if option == 0:
         os.system("clear")
-        print("Theseus and the Minotaur\nGet to the exit to win \nHe gets 2 moves for every one of yours. \nUse w-a-s-d to navigate \nPress s to start \n")
+        print("Theseus and the Minotaur\nGet to the exit to win \nHe gets 2 moves for every one of yours. \nUse w-a-s-d to navigate \nPress b to begin \n")
         selection = GetInput.getch.impl()
-        if selection == 's':
+        if selection == 'b':
             option = 1
         else:
             option = 0
         
     if option == 1:
         if levelNumber == 1:
-            theseusX = 17
-            theseusY = 4
-            minotaurX = 9
-            minotaurY = 4
+            theseusX = 13
+            theseusY = 6
+            minotaurX = 13
+            minotaurY = 3
             level = open('level1.map', 'r')
         elif levelNumber == 2:
             theseusX = 11
@@ -44,10 +44,10 @@ while gameOver == 0:
             minotaurY = 2
             level = open('level2.map', 'r')
         elif levelNumber == 3:
-            theseusX = 20
-            theseusY = 7
-            minotaurX = 1
-            minotaurY = 1
+            theseusX = 9
+            theseusY = 1
+            minotaurX = 37
+            minotaurY = 5
             level = open('level3.map', 'r')
         elif levelNumber == 4:
             theseusX = 20
@@ -87,6 +87,14 @@ while gameOver == 0:
             theseusY -= 1
         if direction == 's':
             theseusY +=1
+        if direction == 'q':
+            gameOver = 1
+            break
+        if direction == 'n':
+            levelNumber = 1
+            option = 1
+        if direction == 'r':
+            option = 1
         atWall = M.wall_check(myMap, theseusX, theseusY)
         if atWall == 0:
             if direction == 'd':
@@ -112,12 +120,12 @@ while gameOver == 0:
 
     if option == 3:
         os.system("clear")
-        print("Game Over \nPress r to reset the game,\n      q to quit the game,\n    or c to cheat and restart the level")
+        print("Game Over \nPress n for a new game,\n      q to quit the game,\n    or r (to cheat) and restart the level")
         selection =  GetInput.getch.impl()
-        if selection == 'r':
+        if selection == 'n':
             levelNumber = 1
             option = 0
-        elif selection == 'c':
+        elif selection == 'r':
             option = 1
         elif selection == 'q':
             gameOver = 1
