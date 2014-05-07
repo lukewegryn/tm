@@ -5,38 +5,80 @@ import movement as M
 #from movement import minotaurX, minotaurY
 import os
 import minotaur as mino
+import GetInput
 theseusX = 20
 theseusY = 7
 minotaurX = 1
 minotaurY = 1
-
 minotaurXprev = minotaurX
 minotaurYprev = minotaurY
 theseusXprev = theseusX
 theseusYprev = theseusY
-needUpdate = 1
+levelNumber = 1
 
-level = open('level3.map', 'r')
-myMap = M.make_list(level)
-myString =M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev, minotaurX, minotaurY)
-M.displayMap(myMap)
-stdscr = curses.initscr()
-while(1):
-    print("theseusX: ")
-    #c=curses.wrapper(curses.initscr().getch())
-    direction = stdscr.getch()
-    direction = chr(direction)
-   # curses.nocbreak#()
-    #stdscr.keypad(False)
-   # curses.echo()
-#    curses.endwin()
-    #direction = curses.wrapper(getCharacter)
-    #print(direction+'\r')
- #   stdscr.refresh()
-    if direction == 'd' or direction == 's' or direction == 'a' or direction == 'w' :
+os.system("clear")
+gameOver = 0
+option = 0
+
+while gameOver == 0:
+    if option == 0:
+        os.system("clear")
+        print("Theseus and the Minotaur\nGet to the exit to win \nHe gets 2 moves for every one of yours. \nUse w-a-s-d to navigate \nPress s to start \n")
+        selection = GetInput.getch.impl()
+        if selection == 's':
+            option = 1
+        else:
+            option = 0
+        
+    if option == 1:
+        if levelNumber == 1:
+            theseusX = 17
+            theseusY = 4
+            minotaurX = 9
+            minotaurY = 4
+            level = open('level1.map', 'r')
+        elif levelNumber == 2:
+            theseusX = 11
+            theseusY = 4
+            minotaurX = 3
+            minotaurY = 2
+            level = open('level2.map', 'r')
+        elif levelNumber == 3:
+            theseusX = 20
+            theseusY = 7
+            minotaurX = 1
+            minotaurY = 1
+            level = open('level3.map', 'r')
+        elif levelNumber == 4:
+            theseusX = 20
+            theseusY = 7
+            minotaurX = 1
+            minotaurY = 1
+            level = open('level4.map', 'r')
+        elif levelNumber == 5:
+            theseusX = 20
+            theseusY = 7
+            minotaurX = 1
+            minotaurY = 1
+            level = open('level5.map', 'r')
+        elif levelNumber == 6:
+            theseusX = 20
+            theseusY = 7
+            minotaurX = 1
+            minotaurY = 1
+            level = open('level6.map', 'r')
+        myMap = M.make_list(level)
+        myString =M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev, minotaurX, minotaurY)
+        os.system("clear")
+        M.displayMap(myMap)
+        option = 2
+
+
+    if option == 2:
+        #direction =input("theseusX: ")
+        direction = GetInput.getch.impl()
         theseusXprev = theseusX
         theseusYprev = theseusY
-        # print(theseusX)
         if direction == 'd':
             theseusX += 1
         if direction == 'a':
@@ -56,18 +98,54 @@ while(1):
             if direction == 's':
                 theseusY -=1
 
-        #os.system("clear")
-        myString = M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev)
+        minotaurPrevX = minotaurX
+        minotaurPrevY = minotaurY
+        minotaurX, minotaurY = mino.minotaurNextLocation(myMap, theseusX, theseusY,minotaurX, minotaurY)
+        minotaurX, minotaurY = mino.minotaurNextLocation(myMap, theseusX, theseusY, minotaurX, minotaurY)
+        os.system("clear")
+        myString = M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev, minotaurX, minotaurY)
         M.displayMap(myString)
+        if(theseusX == minotaurX and theseusY == minotaurY):
+            option = 3
+        if(theseusX == 32 and theseusY == 8):
+            option = 4
+
+    if option == 3:
+        os.system("clear")
+        print("Game Over \nPress r to reset the game,\n      q to quit the game,\n    or c to cheat and restart the level")
+        selection =  GetInput.getch.impl()
+        if selection == 'r':
+            levelNumber = 1
+            option = 0
+        elif selection == 'c':
+            option = 1
+        elif selection == 'q':
+            gameOver = 1
+            break
+        else:
+            option = 3
 
 
-    minotaurPrevX = minotaurX
-    minotaurPrevY = minotaurY
-    minotaurX, minotaurY = mino.minotaurNextLocation(myMap, theseusX, theseusY,minotaurX, minotaurY)
-    #mino.minotaurRemoveLast(myMap, theseusX, theseusY, minotaurX, minotaurY, dirChange)
-    minotaurX, minotaurY = mino.minotaurNextLocation(myMap, theseusX, theseusY, minotaurX, minotaurY)
-    #mino.minotaurRemoveLast(myMap, dirChange)
-    os.system("clear")
-    myString = M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev, minotaurX, minotaurY)
-    M.displayMap(myString)
-
+    if option == 4:
+        os.system("clear")
+        print("You Win!\n")
+        levelNumber += 1
+        if levelNumber == 7:
+            print("You have beat all of our levels! \n")
+            print("\nCONGRATULATIONS YOU ARE A \n")
+            print("\nTHESEUS AND MINOTAUR MASTER \n")
+            levelNumber = 1
+            print("\nPress r to reset or q to quit the game \n")
+        else:
+            print("Press n to continue to the next level\n")
+        selection = GetInput.getch.impl()
+        if selection == 'r':
+            option = 0
+        elif selection == 'n':
+            option = 1
+        elif selection == 'q':
+            gameOver = 1
+            break
+        else:
+            option = 4
+os.system("clear")
