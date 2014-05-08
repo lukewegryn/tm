@@ -27,6 +27,7 @@ while gameOver == 0:
         selection = GetInput.getch.impl()
         if selection == 'b':
             option = 1
+            os.system("clear")
         else:
             option = 0
         
@@ -56,15 +57,15 @@ while gameOver == 0:
             minotaurY = 1
             level = open('level4.map', 'r')
         elif levelNumber == 5:
-            theseusX = 20
-            theseusY = 7
-            minotaurX = 1
-            minotaurY = 1
+            theseusX = 1 
+            theseusY = 1
+            minotaurX = 37 
+            minotaurY = 5
             level = open('level5.map', 'r')
         elif levelNumber == 6:
-            theseusX = 20
-            theseusY = 7
-            minotaurX = 1
+            theseusX = 1
+            theseusY = 1
+            minotaurX = 37
             minotaurY = 1
             level = open('level6.map', 'r')
         myMap = M.make_list(level)
