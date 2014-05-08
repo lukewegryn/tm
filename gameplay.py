@@ -45,11 +45,11 @@ while gameOver == 0:
             minotaurY = 2
             level = open('level2.map', 'r')
         elif levelNumber == 3:
-            theseusX = 9
-            theseusY = 1
-            minotaurX = 37
+            theseusX = 25
+            theseusY = 7
+            minotaurX = 12
             minotaurY = 5
-            level = open('level3.map', 'r')
+            level = open('level.map', 'r')
         elif levelNumber == 4:
             theseusX = 20
             theseusY = 7
