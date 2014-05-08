@@ -23,7 +23,7 @@ option = 0
 while gameOver == 0:
     if option == 0:
         os.system("clear")
-        print("Theseus and the Minotaur\nGet to the exit to win \nHe gets 2 moves for every one of yours. \nUse w-a-s-d to navigate \nPress b to begin \n")
+        print("Theseus and the Minotaur\nGet to the exit to win. \nHe gets 2 moves for every one of yours. \nUse w-a-s-d to navigate. Press q at anytime to quit \nand r at anytime to restart the level. \nPress b to begin. \n")
         selection = GetInput.getch.impl()
         if selection == 'b':
             option = 1
@@ -51,9 +51,9 @@ while gameOver == 0:
             minotaurY = 5
             level = open('level3.map', 'r')
         elif levelNumber == 4:
-            theseusX = 20
+            theseusX = 1
             theseusY = 7
-            minotaurX = 1
+            minotaurX = 37
             minotaurY = 1
             level = open('level4.map', 'r')
         elif levelNumber == 5:
