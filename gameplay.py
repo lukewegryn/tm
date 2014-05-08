@@ -25,15 +25,9 @@ option = -1
 
 while gameOver == 0:
     if option == -1:
-        choice = input("Enter w for windows and u for unix:\n")
-        if choice == 'w':
-            Win_or_Unix = 1
-            option = 0
-        elif choice == 'u':
-            option = 0
-
-
-
+        Win_or_Unix = CS.checkOs()
+        option = 0 
+              
     if option == 0:
         CS.clearScreen(Win_or_Unix)
         print("Theseus and the Minotaur\nGet to the exit to win. \nHe gets 2 moves for every one of yours. \nUse w-a-s-d to navigate. Press q at anytime to quit \nand r at anytime to restart the level. \nPress b to begin. \n")
