@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
+
+'''gameplay.py -- Responsible for main loop as well as initializing
+all of the game data and acting as a Finite State Machine'''
+
 import sys
 import movement as M
 import clearScreen as CS
 import getChar as gC
-#from movement import theseusX, theseusY
-#from movement import minotaurX, minotaurY
 import os
 import minotaur as mino
 import GetInput
+
 theseusX = 20
 theseusY = 7
 minotaurX = 1
@@ -18,16 +21,15 @@ theseusXprev = theseusX
 theseusYprev = theseusY
 levelNumber = 1
 
-#os.system("clear")
 Win_or_Unix = 0 #0 is unix 1 is windows
-gameOver = 0
-option = -1
+gameOver = 0 #when the game is over value set to 1
+option = -1 
 
 while gameOver == 0:
     if option == -1:
         Win_or_Unix = CS.checkOs()
         option = 0 
-              
+
     if option == 0:
         CS.clearScreen(Win_or_Unix)
         print("Theseus and the Minotaur\nGet to the exit to win. \nHe gets 2 moves for every one of yours. \nUse w-a-s-d to navigate. Press q at anytime to quit \nand r at anytime to restart the level. \nPress b to begin. \n")
