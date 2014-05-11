@@ -9,23 +9,27 @@ The advantage of the Minotaur forces the player to intellengently navigate These
 
 How to use:
 	This program must be run from the terminal or the command prompt 
-depending on whether you are using windows or linux.
+depending on whether you are using Windows, Linux, or OS X.
 
 Linux: 
-Simply navigate to the directory that you fork this repo to, 
-and run ./gameplay.py to start the game. You must type "u" when prompted. 
-Instructions on how to play are given within the game. 
+If you do not already have python installed do that first. 
+Then simply navigate to the directory that you fork this repo to, 
+and run ./gameplay.py to start the game. 
+
+OSX:
+Open Terminal and navigate to where you saved this directory. Run the command
+"python gameplay.py" to start the game.
 
 Windows:
-In order to play on windows you must add the game to your PATH variable.
+In order to play on windows you must download python and add the game to your 
+PATH variable.
 In Windows 7 go to Control Panel > System and Security > System >
 Advanced System Settings (on left panel) > Enironmental Variables.
 Double click "path" under variables at the top and add C://Python33;
 or whichever python version is listed in C:// (ie Python26).
 Add a semicolon to the to the end of the entry before if there is not already
 one there. Click "OK". Now run "cmd" from the windows command prompt, navigate
-to the directory where the game is and type "python gameplay.py". You will need
-to enter "w" when prompted. 
+to the directory where the game is and type "python gameplay.py". 
 
 Unix Philosophy:
 	When building this project we tried to incorporate some Unix 

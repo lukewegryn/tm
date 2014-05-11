@@ -147,7 +147,6 @@ while gameOver == 0:
     if option == 4:
         CS.clearScreen(Win_or_Unix)
         print("You Win!\n")
-        levelNumber += 1
         if levelNumber == 7:
             print("You have beat all of our levels! \n")
             print("\nCONGRATULATIONS YOU ARE A \n")
@@ -156,7 +155,8 @@ while gameOver == 0:
             print("\nPress r to reset or q to quit the game \n")
         else:
             print("Press n to continue to the next level\n")
-        selection = gC.getChar(Win_or_Unix)
+            levelNumber += 1
+            selection = gC.getChar(Win_or_Unix)
         if selection == 'r':
             option = 0
         elif selection == 'n':
