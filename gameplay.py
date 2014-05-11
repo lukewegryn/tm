@@ -50,7 +50,7 @@ while gameOver == 0:
         elif levelNumber == 2:
             theseusX = 11
             theseusY = 4
-            minotaurX = 3
+            minotaurX = 4
             minotaurY = 2
             level = open('level2.map', 'r')
         elif levelNumber == 3:
@@ -164,6 +164,6 @@ while gameOver == 0:
         elif selection == 'q':
             gameOver = 1
             break
-        else:
-            option = 4
+	else:
+		option = 4
 CS.clearScreen(Win_or_Unix)
