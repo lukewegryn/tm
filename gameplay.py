@@ -147,7 +147,6 @@ while gameOver == 0:
     if option == 4:
         CS.clearScreen(Win_or_Unix)
         print("You Win!\n")
-        levelNumber += 1
         if levelNumber == 7:
             print("You have beat all of our levels! \n")
             print("\nCONGRATULATIONS YOU ARE A \n")
@@ -161,6 +160,7 @@ while gameOver == 0:
             option = 0
         elif selection == 'n':
             option = 1
+            levelNumber += 1
         elif selection == 'q':
             gameOver = 1
             break
