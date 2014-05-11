@@ -155,11 +155,11 @@ while gameOver == 0:
             print("\nPress r to reset or q to quit the game \n")
         else:
             print("Press n to continue to the next level\n")
-            levelNumber += 1
             selection = gC.getChar(Win_or_Unix)
         if selection == 'r':
             option = 0
         elif selection == 'n':
+            levelNumber += 1
             option = 1
         elif selection == 'q':
             gameOver = 1
