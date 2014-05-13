@@ -161,6 +161,7 @@ while gameOver == 0:
         elif selection == 'n':
             levelNumber += 1
             option = 1
+            levelNumber += 1
         elif selection == 'q':
             gameOver = 1
             break
