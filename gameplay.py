@@ -19,7 +19,7 @@ minotaurXprev = minotaurX
 minotaurYprev = minotaurY
 theseusXprev = theseusX
 theseusYprev = theseusY
-levelNumber = 1
+levelNumber = 1 
 
 Win_or_Unix = 0 #0 is unix 1 is windows
 gameOver = 0 #when the game is over value set to 1
@@ -153,11 +153,11 @@ while gameOver == 0:      #this is the game loop
             print("\nPress r to reset or q to quit the game \n")
         else:
             print("Press n to continue to the next level\n")
-            selection = gC.getChar(Win_or_Unix)
+        selection = gC.getChar(Win_or_Unix)
         if selection == 'r':
             option = 0
             levelNumber=1
-        elif selection == 'n':
+        elif selection == 'n' and levelNumber !=6:
             levelNumber += 1
             option = 1
         elif selection == 'q':
