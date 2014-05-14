@@ -37,6 +37,9 @@ while gameOver == 0:      #this is the game loop
         if selection == 'b':
             option = 1
             CS.clearScreen(Win_or_Unix)
+        elif selection == 'q':
+            gameOver =1
+            break
         else:
             option = 0
 
@@ -61,15 +64,15 @@ while gameOver == 0:      #this is the game loop
             level = open('level3.map', 'r')
         elif levelNumber == 4:
             theseusX = 1
-            theseusY = 7
-            minotaurX = 19
-            minotaurY = 3
-            level = open('level4.map', 'r')
-        elif levelNumber == 5:
-            theseusX = 1
             theseusY = 1
             minotaurX = 37
             minotaurY = 5
+            level = open('level4.map', 'r')
+        elif levelNumber == 5:
+            theseusX = 1
+            theseusY = 7
+            minotaurX = 19
+            minotaurY = 3
             level = open('level5.map', 'r')
         elif levelNumber == 6:
             theseusX = 1
