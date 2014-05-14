@@ -1,8 +1,8 @@
 			Theseus and the Minotaur
 About:
 	This is a maze puzzle game in which the player tries to get 
-Theseus (the question mark) to the end of the maze before the 
-Minotaur (the dollar sign) is able to get to him. 
+Theseus (represented by *) to the end of the maze before the 
+Minotaur (represented by #) is able to get to him. 
 The challenge of the game comes with the fact the the Minotaur can 
 move 2 spaces for every one of Theseus's. 
 The advantage of the Minotaur forces the player to intellengently navigate Theseus in a way that traps him.
