@@ -25,7 +25,7 @@ Win_or_Unix = 0 #0 is unix 1 is windows
 gameOver = 0 #when the game is over value set to 1
 option = -1
 
-while gameOver == 0:
+while gameOver == 0:      #this is the game loop
     if option == -1:
         Win_or_Unix = CS.checkOs()
         option = 0
@@ -62,8 +62,8 @@ while gameOver == 0:
         elif levelNumber == 4:
             theseusX = 1
             theseusY = 7
-            minotaurX = 37
-            minotaurY = 1
+            minotaurX = 19
+            minotaurY = 3
             level = open('level4.map', 'r')
         elif levelNumber == 5:
             theseusX = 1
@@ -82,7 +82,6 @@ while gameOver == 0:
         CS.clearScreen(Win_or_Unix)
         M.displayMap(myMap)
         option = 2
-
 
     if option == 2:
         #direction =input("theseusX: ")
@@ -161,7 +160,6 @@ while gameOver == 0:
         elif selection == 'n':
             levelNumber += 1
             option = 1
-            levelNumber += 1
         elif selection == 'q':
             gameOver = 1
             break
