@@ -27,11 +27,50 @@ def wall_check(myMap, theseusX, theseusY): #checks if theseus hit a wall
     else :
         return 1
 
+def level_check(levelNumber): #returns the current positions and level
+    if levelNumber == 1:
+        theseusX = 13
+        theseusY = 6
+        minotaurX = 13
+        minotaurY = 3
+        level = open('level1.map', 'r')
+    elif levelNumber == 2:
+        theseusX = 11
+        theseusY = 4
+        minotaurX = 4
+        minotaurY = 2
+        level = open('level2.map', 'r')
+    elif levelNumber == 3:
+        theseusX = 9
+        theseusY = 1
+        minotaurX = 37
+        minotaurY = 5
+        level = open('level3.map', 'r')
+    elif levelNumber == 4:
+        theseusX = 1
+        theseusY = 1
+        minotaurX = 37
+        minotaurY = 5
+        level = open('level4.map', 'r')
+    elif levelNumber == 5:
+        theseusX = 1
+        theseusY = 7
+        minotaurX = 19
+        minotaurY = 3
+        level = open('level5.map', 'r')
+    elif levelNumber == 6:
+        theseusX = 1
+        theseusY = 1
+        minotaurX = 37
+        minotaurY = 1
+        level = open('level6.map', 'r')
+    return level, theseusX, theseusY, minotaurX, minotaurY
+
 def map_list(myMap,theseusX, theseusY, theseusXprev, theseusYprev, minotaurX, minotaurY): #puts values into the map list
     if myMap[(theseusX)+((theseusY)*41)] == wall:
         theseusX = theseusXprev
         theseusY = theseusYprev
-    else :
+    else:
         myMap[(theseusX)+((theseusY)*41)] =  thesChar
     if theseusX !=theseusXprev or theseusY != theseusYprev:
         myMap[(theseusXprev)+((theseusYprev)*41)] = ' '

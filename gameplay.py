@@ -44,42 +44,7 @@ while gameOver == 0:      #this is the game loop
             option = 0
 
     if option == 1:
-        if levelNumber == 1:
-            theseusX = 13
-            theseusY = 6
-            minotaurX = 13
-            minotaurY = 3
-            level = open('level1.map', 'r')
-        elif levelNumber == 2:
-            theseusX = 11
-            theseusY = 4
-            minotaurX = 4
-            minotaurY = 2
-            level = open('level2.map', 'r')
-        elif levelNumber == 3:
-            theseusX = 9
-            theseusY = 1
-            minotaurX = 37
-            minotaurY = 5
-            level = open('level3.map', 'r')
-        elif levelNumber == 4:
-            theseusX = 1
-            theseusY = 1
-            minotaurX = 37
-            minotaurY = 5
-            level = open('level4.map', 'r')
-        elif levelNumber == 5:
-            theseusX = 1
-            theseusY = 7
-            minotaurX = 19
-            minotaurY = 3
-            level = open('level5.map', 'r')
-        elif levelNumber == 6:
-            theseusX = 1
-            theseusY = 1
-            minotaurX = 37
-            minotaurY = 1
-            level = open('level6.map', 'r')
+        level, theseusX, theseusY, minotaurX, minotaurY = M.level_check(levelNumber)
         myMap = M.make_list(level)
         myString =M.map_list(myMap, theseusX, theseusY, theseusXprev, theseusYprev, minotaurX, minotaurY)
         CS.clearScreen(Win_or_Unix)
