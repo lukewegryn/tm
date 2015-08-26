@@ -3,7 +3,7 @@ Theseus and the Minotaur
 
 About:
 -------
-	This is a maze puzzle game in which the player tries to get 
+This is a maze puzzle game in which the player tries to get 
 Theseus (represented by *) to the end of the maze before the 
 Minotaur (represented by #) is able to get to him. 
 The challenge of the game comes with the fact the the Minotaur can 
@@ -12,7 +12,7 @@ The advantage of the Minotaur forces the player to intellengently navigate These
 
 How to use:
 -----------
-	This program must be run from the terminal or the command prompt 
+This program must be run from the terminal or the command prompt 
 depending on whether you are using Windows, Linux, or OS X.
 
 Linux:
@@ -40,7 +40,7 @@ to the directory where the game is and type "python gameplay.py".
 
 Unix Philosophy:
 ----------------
-	When building this project we tried to incorporate some Unix 
+When building this project we tried to incorporate some Unix 
 philosophy into the design. We attempted to use modular programming 
 and keep a thin layer between the interface and the data manipulation 
 in the background. The methods that print out the information are completely 
