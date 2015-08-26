@@ -1,4 +1,6 @@
-			Theseus and the Minotaur
+Theseus and the Minotaur
+=========================
+
 About:
 	This is a maze puzzle game in which the player tries to get 
 Theseus (represented by *) to the end of the maze before the 
